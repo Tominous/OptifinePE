@@ -1,0 +1,97 @@
+
+{
+  "realms_loading_progress_screen@progress.progress_screen": {
+    "variables": [
+      {
+        "requires": "($desktop_screen)",
+        "$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      },
+      {
+        "requires": "($pocket_screen)",
+		"$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      }
+    ]
+  },
+
+  "world_loading_progress_screen@progress.progress_screen": {
+    "variables": [
+      {
+        "requires": "($desktop_screen)",
+        "$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      },
+      {
+        "requires": "($pocket_screen)",
+		"$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      }
+    ]
+  },
+
+  "overworld_loading_progress_screen@progress.progress_screen": {
+    "$screen_bg_content": "common.dirt_background",
+    "variables": [
+      {
+        "requires": "($desktop_screen)",
+        "$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      },
+      {
+        "requires": "($pocket_screen)",
+		"$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      }
+    ]
+  },
+
+  "nether_loading_progress_screen@overworld_loading_progress_screen": {
+    "$screen_bg_content": "progress.nether_loading_background"
+  },
+
+  "theend_loading_progress_screen@overworld_loading_progress_screen": {
+    "$screen_bg_content": "progress.theend_loading_background"
+  },
+
+  "world_saving_progress_screen@progress.progress_screen": {
+    "variables": [
+      {
+        "requires": "($desktop_screen)",
+        "$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      },
+      {
+        "requires": "($pocket_screen)",
+		"$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      }
+    ]
+  },
+
+  "world_convert_modal_progress_screen@progress.progress_screen": {
+    "variables": [
+      {
+        "requires": "($desktop_screen)",
+        "$screen_bg_content": "common.dirt_background",
+        "$screen_content": "progress_deluxe.world_loading_progress_screen_content"
+      },
+      {
+        "requires": "($pocket_screen)",
+        "$screen_content": "progress.world_convert_modal_progress_screen_content"
+      }
+    ]
+  },
+
+  "progress_screen@common.base_screen": {
+    "force_render_below": false,
+    "$screen_overlay": "settings.background",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ]
+  }
+}

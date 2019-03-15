@@ -1,0 +1,279 @@
+{
+  "namespace": "optifine_help_section",
+  
+  /**********************************
+				Controls
+   **********************************/
+   
+        "feature_box": {
+    "type": "image",
+    "texture": "textures/gui/help_label_box",
+    "size": [ "100%", "100%c + 6px" ],
+    "controls": [
+			            {
+              "spacer_3": {
+                "type": "panel",
+                "size": [ 2, 5 ]
+              }
+            },
+	      {
+        "feature": {
+          "type": "label",
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+		  "offset": [4,5],
+		  "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "text": "$container_title",
+          "bindings": [
+            {
+              "binding_name": "$container_title"
+            }
+          ]
+        }
+      },
+	  	{ 
+	"space": { 
+	"type": "panel", 
+	"size": ["100%", 4] 
+	} 
+	}
+    ]
+  },
+   
+     "option_info_label_control": {
+    "type": "image",
+    "texture": "textures/gui/help_label_box",
+    "size": [ "100%", "100%c + 6px" ],
+    "controls": [
+			            {
+              "spacer_3": {
+                "type": "panel",
+                "size": [ 2, 5 ]
+              }
+            },
+	      {
+        "title": {
+          "type": "label",
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+		  "offset": [4,5],
+		  "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "text": "$container_title",
+          "bindings": [
+            {
+              "binding_name": "$container_title"
+            }
+          ]
+        }
+      },
+      {
+        "control": {
+          "type": "label",
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+		  "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+		  "offset": [4,-5],
+          "text": "$container_text_binding_name",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  	{ 
+	"space": { 
+	"type": "panel", 
+	"size": ["100%", 4] 
+	} 
+	}
+    ]
+  },
+    "option_info_label@settings_common.option_generic": {
+    "$control_name": "optifine_help_section.option_info_label_control"
+  },
+  
+  /*****************************
+				Content
+  ******************************/
+  
+    "help_button@settings_common.section_toggle_base": {
+	"size": ["33.33%","100%"],
+		"$glyph_offset": [ 0, 0 ],
+	"$glyph_anchor_from": "center",
+    "$glyph_anchor_to": "center",
+    "$toggle_view_binding_name": "help_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/help_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/help_button",
+    "$glyph_size": [ 12, 11 ],
+    "$button_text": "",//def= Help
+    "$toggle_property_bag": {
+      "#panel_title": "Help"
+    }
+  },
+
+  "help_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "help_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+		  		{
+        "@optifine_help_section.option_info_label": {
+		  "$container_title": "¿Cuándo vas a añadir un botón de tercera persona?",
+          "$container_text_binding_name": "No es fácil, porque Minecraft PE no soporta que hayan botones de ajustes fuera del menú de ajustes, por eso he puesto el botón en la barra de botones de menu de ajustes",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+		{
+        "@optifine_help_section.option_info_label": {
+		"$container_title": "¿Cómo se descarga en la tienda?",
+          "$container_text_binding_name": "Links mediante boton en la tienda no estan disponibles debido a que los desarrolladores de MCPE decidieron quitar el soporte de botones con links customizados",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  		{
+        "@optifine_help_section.option_info_label": {
+		  "$container_title": "¿Es compatible con texturas?",
+          "$container_text_binding_name": "Si",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  		{
+        "@optifine_help_section.option_info_label": {
+		  "$container_title": "¿Como se optimiza el juego?",
+          "$container_text_binding_name": "Este AddOn hace que algunos bloques sean más simples, por lo que hay que cargar menos archivos. El juego tiene unos archivos que modifica los buffer de logger del juego haciendo que sea mas rapido (en castellano: hace que unos archivos esenciales del juego pesen menos)",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  //FEATURES
+	  { "spacer": { "type": "panel", "size": ["100%", 10] } },
+	  
+	  	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "optifine.seeFeatures",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  
+	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "opt.feature1",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "opt.feature2",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "opt.feature3",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "opt.feature4",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "opt.feature5",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+	  	  	  		{
+        "@optifine_help_section.feature_box": {
+		  "$container_title": "opt.feature6",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+	  
+    ]
+  }
+  //end
+}

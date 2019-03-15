@@ -1,0 +1,44 @@
+{
+   "format_version" : 1,
+   "header" : {
+      "description" : "Optifine PE v4.0.0 By Albii",
+      "name" : "Optifine PE",
+      "uuid" : "45007738-38eb-3828-bf12-a05dd8d7d81c",
+      "version" : [ 4, 0, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "Optifine PE v4.0.0 By Albii",
+         "type" : "resources",
+         "uuid" : "03c3d7f1-bad9-3b95-9323-2b5f0057eb7f",
+         "version" : [ 4, 0, 0 ]
+      }
+   ]/*
+   "subpacks": [
+     {
+    "folder_name": "optifine_off",
+    "name": "OFF",
+    "memory_tier": 0
+   },
+  {
+    "folder_name": "optifine_verylow",
+    "name": "manifest.ultraOpt",
+    "memory_tier": 1
+   },
+   {
+      "folder_name": "optifine_low",
+      "name": "manifest.highOpt",
+      "memory_tier": 2
+   },
+   {
+      "folder_name": "optifine_medium",
+      "name": "manifest.mediumOpt",
+      "memory_tier": 3
+   },
+   {
+      "folder_name": "optifine_high",
+      "name": "manifest.lowOpt",
+      "memory_tier": 4
+   }
+  ]*/
+}

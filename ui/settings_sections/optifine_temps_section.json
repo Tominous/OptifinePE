@@ -1,0 +1,50 @@
+{
+  "namespace": "optifine_temps_section",
+
+    "temps_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "temps_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/store_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/store_button",
+    "$glyph_size": [ 16, 19 ],
+    "$button_text": "store.tempstitle",
+    "$toggle_property_bag": {
+      "#panel_title": "store.tempstitle"
+    }
+  },
+
+    "temps_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "temps_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+
+			  		{
+        "@optifine_help_section.option_info_label": {
+		  "$container_title": "store.tempscomingsoon",
+          "$container_text_binding_name": "store.tempsdescription",
+          "$show_option_label": false,
+          "bindings": [
+            {
+              "binding_name": "#achievment_warning_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+      
+
+	]
+  }
+
+
+
+}

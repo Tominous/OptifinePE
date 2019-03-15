@@ -1,0 +1,1176 @@
+{
+  "namespace": "optifine_store_section",
+
+	"frame": {
+    "type": "image",
+	"anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/frame",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  },
+
+    "coin_balance_panel": {
+	"type": "image",
+    "size": [ 58, 16 ],
+    "texture": "textures/gui/whiteS",
+    "controls": [
+      {
+        "coin_balance_text": {
+          "type": "label",
+          "color": "$coin_color",
+          "layer": 4,
+          "size": [ 42, 10 ],
+          "offset": [ -16, 0.5 ],
+          "text": "Gratis",
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "text_alignment": "right",
+          "bindings": [
+            {
+              "binding_type": "global",
+              "binding_name": "#coin_balance",
+              "binding_condition": "always_when_visible"
+            }
+          ]
+        }
+      },
+      {
+        "coin_icon@common_store.coin_icon": {
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [ -2, 0 ],
+          "layer": 3
+        }
+      }
+    ]
+  },
+
+  /*****************************
+				Content
+  ******************************/
+      "vr_back_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "vr_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/store_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/store_button",
+    "$glyph_size": [ 15, 17 ],
+    "$button_text": "Atras",
+    "$toggle_property_bag": {
+      "#panel_title": "optifine.shaderStore"
+    }
+  },
+
+    "vr_button@settings_common.section_toggle_base": {
+	"size": ["33.33%","100%"],
+	"$glyph_offset": [ 0, 0 ],
+	"$glyph_anchor_from": "center",
+    "$glyph_anchor_to": "center",
+    "$toggle_view_binding_name": "vr_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/store_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/store_button",
+    "$glyph_size": [ 15, 17 ],
+    "$button_text": "",//def= optifine.shaderStore
+    "$toggle_property_bag": {
+      "#panel_title": "optifine.shaderStore"
+    }
+  },
+
+  "vr_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "vr_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+
+	{
+	  "name_controls": {
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "size": [ "100%", "30px" ],
+	  "controls": [
+	        { "shaders_button@optifine_store_section.shaders_button": { "size": ["75%", "30px" ] } },
+            {
+              "action_button@settings_common.action_button": {
+                "$button_text": "4 items",
+				"size": ["25%", "100%"]
+              }
+            }
+
+	      ]
+	    }
+	  },
+	    {
+	"spacer_0": {
+	"type": "panel",
+		"size": [ 0, 5 ]
+	}
+  },
+	  	{
+	  "name_controls": {
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "size": [ "100%", "30px" ],
+	  "controls": [
+	        { "temps_button@optifine_temps_section.temps_button": { "size": ["75%", "30px" ] } },
+            {
+              "action_button@settings_common.action_button": {
+                "$button_text": "0 items",
+				"size": ["25%", "100%"]
+              }
+            }
+
+	      ]
+	    }
+	  },
+	    {
+	"spacer_1": {
+	"type": "panel",
+		"size": [ 0, 5 ]
+	}
+  },
+
+	  {
+	  "name_controls": {
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "size": [ "100%", "30px" ],
+	  "controls": [
+	        { "pvp_button@optifine_store_section.pvp_button": { "size": ["75%", "30px" ] } },
+            {
+              "action_button@settings_common.action_button": {
+                "$button_text": "6 items",
+				"size": ["25%", "100%"]
+              }
+            }
+
+	      ]
+	    }
+	  }
+    ]
+  },
+
+  ///////////////////////////////////////////////////////////////////////////////////SHADERS
+      "shaders_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "shaders_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/store_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/store_button",
+    "$glyph_size": [ 15, 17 ],
+    "$button_text": "Shaders",
+    "$toggle_property_bag": {
+      "#panel_title": "Shaders"
+    }
+  },
+
+  "shaders_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "shaders_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+	//{ "back_button@optifine_store_common.go_to_store_button" : {} },
+
+				{ "s_4_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "s_4": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "FranCrafters Shaders (Android)",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/s_4",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+	//"controls": [ { "frame@optifine_store_section.frame": { } } ]
+  }
+  }
+
+    ]
+  }
+  },
+              {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+				{ "s_1_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "s_1": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Energy shaders (Win10, IOS & Android)",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/s_1",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+              {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+
+  				{ "s_2_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "s_2": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "CSPE Shaders (IOS & Android)",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/s_2",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+
+                {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+
+  				{ "s_3_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "s_3": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Winter Craft Shader (IOS, Android & Win10)",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/s_3",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  }
+
+    ]
+  },
+  /////////////////////////////////////////////////////////////////////////////////PVP TEXTURES
+        "pvp_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "pvp_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/store_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/store_button",
+    "$glyph_size": [ 15, 17 ],
+    "$button_text": "PvP textures",
+    "$toggle_property_bag": {
+      "#panel_title": "PvP Textures"
+    }
+  },
+
+  "pvp_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "pvp_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+	  /*    { "pvp8_price@optifine_store_section.coin_balance_panel": {
+  				      "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+  		  "offset": [0,16]
+  			}
+  			},
+  	{
+    "pvp_8": {
+      "type": "image",
+      "texture": "textures/gui/whiteBorder",
+      "size": [ "100%", "120%c + 6px" ],
+      "controls": [
+        {
+          "control": {
+  	      "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+            "type": "label",
+  		  "offset": [ 0, 2 ],
+            "color": "$main_header_text_color",
+            "size": [ "100% - 8px", "default" ],
+            "layer": 1,
+            "text": "Ganferpack",
+            "bindings": [
+              {
+                "binding_name": "$container_text_binding_name"
+              }
+            ]
+          }
+        },
+  	        {
+          "resolution": {
+  	      "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+            "type": "label",
+  		  "offset": [ 160, 2 ],
+            "color": "$main_header_text_color",
+            "size": [ "100% - 8px", "default" ],
+            "layer": 1,
+            "text": "16x16",
+            "bindings": [
+              {
+                "binding_name": "$container_text_binding_name"
+              }
+            ]
+          }
+        },
+  	        {
+          "control": {
+  	      "anchor_from": "bottom_middle",
+            "anchor_to": "bottom_middle",
+            "type": "label",
+  		  "offset": [ 0, -2 ],
+            "color": "$main_header_text_color",
+            "size": [ "100% - 8px", "default" ],
+            "layer": 1,
+            "text": "optifine.searchContent",
+            "bindings": [
+              {
+                "binding_name": "$container_text_binding_name"
+              }
+            ]
+          }
+        },
+  	  {
+  	  "icon": {
+      "type": "image",
+  		"anchor_from": "center",
+      "anchor_to": "center",
+      "offset": [0,-2],
+      "texture": "textures/store_assets/pvp_8",
+      "layer": 3,
+      "uv": [ 0, 0 ],
+      "uv_size": [ 537, 280 ],
+      "size": [ 179, 93 ]
+    }
+    }
+
+      ]
+    }
+    },*/
+      { "pvp7_price@optifine_store_section.coin_balance_panel": {
+  				      "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+  		  "offset": [0,16]
+  			}
+  			},
+  	{
+    "pvp_7": {
+      "type": "image",
+      "texture": "textures/gui/whiteBorder",
+      "size": [ "100%", "120%c + 6px" ],
+      "controls": [
+        {
+          "control": {
+  	      "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+            "type": "label",
+  		  "offset": [ 0, 2 ],
+            "color": "$main_header_text_color",
+            "size": [ "100% - 8px", "default" ],
+            "layer": 1,
+            "text": "BlockPixel Resource Pack",
+            "bindings": [
+              {
+                "binding_name": "$container_text_binding_name"
+              }
+            ]
+          }
+        },
+  	        {
+          "resolution": {
+  	      "anchor_from": "top_middle",
+            "anchor_to": "top_middle",
+            "type": "label",
+  		  "offset": [ 160, 2 ],
+            "color": "$main_header_text_color",
+            "size": [ "100% - 8px", "default" ],
+            "layer": 1,
+            "text": "16x16",
+            "bindings": [
+              {
+                "binding_name": "$container_text_binding_name"
+              }
+            ]
+          }
+        },
+  	        {
+          "control": {
+  	      "anchor_from": "bottom_middle",
+            "anchor_to": "bottom_middle",
+            "type": "label",
+  		  "offset": [ 0, -2 ],
+            "color": "$main_header_text_color",
+            "size": [ "100% - 8px", "default" ],
+            "layer": 1,
+            "text": "optifine.searchContent",
+            "bindings": [
+              {
+                "binding_name": "$container_text_binding_name"
+              }
+            ]
+          }
+        },
+  	  {
+  	  "icon": {
+      "type": "image",
+  		"anchor_from": "center",
+      "anchor_to": "center",
+      "offset": [0,-2],
+      "texture": "textures/store_assets/pvp_7",
+      "layer": 3,
+      "uv": [ 0, 0 ],
+      "uv_size": [ 537, 280 ],
+      "size": [ 179, 93 ]
+    }
+    }
+
+      ]
+    }
+    },
+	  { "pvp6_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "pvp_6": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Polar Pack",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "resolution": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 160, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "16x16",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/pvp_6",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+                {
+              "spacer_6": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+				{ "pvp1_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "pvp_1": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Huahwi PvP Texture Pack",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  	        {
+        "resolution": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 160, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "32x32",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/pvp_1",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+
+                {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+
+  				{ "pvp2_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "pvp_2": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Cherry Blossom",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  	        {
+        "resolution": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 160, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "16x16",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/pvp_2",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+
+                {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+
+    				{ "pvp3_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "pvp_3": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Bboymoreno92",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  	  	        {
+        "resolution": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 160, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "32x32",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/pvp_3",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+
+                  {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+
+    				{ "pvp3_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "pvp_4": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "Mondos Purple",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  	  	        {
+        "resolution": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 160, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "16x16",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/pvp_4",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  },
+
+                    {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, 5 ]
+              }
+            },
+
+    				{ "pvp5_price@optifine_store_section.coin_balance_panel": {
+				      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+		  "offset": [0,16]
+			}
+			},
+	{
+  "pvp_5": {
+    "type": "image",
+    "texture": "textures/gui/whiteBorder",
+    "size": [ "100%", "120%c + 6px" ],
+    "controls": [
+      {
+        "control": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 0, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "FeatherCloud",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	        {
+        "control": {
+	      "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "type": "label",
+		  "offset": [ 0, -2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "optifine.searchContent",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  	  	        {
+        "resolution": {
+	      "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "type": "label",
+		  "offset": [ 160, 2 ],
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+          "text": "64x64",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      },
+	  {
+	    "icon": {
+    "type": "image",
+			  "anchor_from": "center",
+          "anchor_to": "center",
+    "offset": [0,-2],
+    "texture": "textures/store_assets/pvp_5",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 537, 280 ],
+    "size": [ 179, 93 ]
+  }
+  }
+
+    ]
+  }
+  }
+
+    ]
+  }
+  //end
+}

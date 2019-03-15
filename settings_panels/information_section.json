@@ -1,0 +1,178 @@
+  //////////////////////////////////////////////////////////
+ //modified by netherninja, dont use on any other addons!//
+//////////////////////////////////////////////////////////
+
+{
+  "namespace": "information_section",
+
+// Info button & section
+  
+  "info_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "info_button_toggle",
+    "$glyph_texture": "textures/ui/info_glyph",
+    "$glyph_color_texture": "textures/ui/info_glyph_color",
+    "$glyph_size": [ 17, 17 ],
+    "$button_text": "panel.info",
+    "$toggle_property_bag": {
+      "#panel_title": "panel.info"
+    }
+  },
+  "advanced_video_options_toggle@settings_common.option_toggle_control": {
+    "$toggle_name": "Show Feature Info",
+    "$toggle_state_binding_name": "#advanced_video_options"
+  },
+    
+  "info_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "info_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.divide1"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "YouTube: NetherNinja"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "Twitter: §f@NetherNinja"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "Gamertag: §fNetherNinjaMC"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.changelog1"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.changelog2"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.divide2"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.changelog6"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.changelog7"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.changelog8"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.changelog10"
+        }
+      },
+      { 
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "space.spacer"
+        }
+      },
+      {
+        "option_toggle_7@settings_common.option_toggle": {
+          "$option_label": "toggle.more_info",
+          "$control_name": "general_section.advanced_video_options_toggle"
+        }
+      },
+      {
+        "advanced_settings": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "general_section.advanced_video_options_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+        "icon": {
+          "type": "image",
+	        "anchor_from": "center",
+          "anchor_to": "center",
+          "offset": [ 0,0 ],
+          "texture": "textures/changelog/info1",
+          "layer": 3,
+          "uv": [ 0, 0 ],
+          "uv_size": [ 0, 0 ],
+          "size": [ 235, 155 ]
+        }
+      },
+      {   
+        "icon": {
+          "type": "image",
+	        "anchor_from": "center",
+          "anchor_to": "center",
+          "offset": [ 0,0 ],
+          "texture": "textures/changelog/info2",
+          "layer": 3,
+          "uv": [ 0, 0 ],
+          "uv_size": [ 0, 0 ],
+          "size": [ 235, 155 ]
+        }
+      },
+      { 
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.divide3"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.info1"
+        }
+      },
+      {
+      "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": ""
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.divide4"
+        }
+      },
+      {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": "text.info2"
+             }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+
+  //////////////////////////////////////////////////////////
+ //modified by netherninja, dont use on any other addons!//
+//////////////////////////////////////////////////////////

@@ -1,0 +1,7 @@
+This behavior pack was made in order to use function command, this command execute a command in a corresponding function file. You can edit the file for your custom /function command.
+
+Go in folder name functions here are all files that has a command for /function command. Open one of this file as a text then you can see all of the command in the game. Example you edit the file and you put a command "say hello" then this command will execute when you use this for function command.
+
+You can renamed the file anything you like, don't renamed the extension name(.mcfunction). And this is the named you need to use in /function command. For example you renamed "invulnerable.mcfunction" file to "test.mcfunction" so now in the game you need to do is "/function test" to run all commands in this file.
+
+After you edit the file do /reload to reload the file in behavior pack.

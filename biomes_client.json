@@ -1,0 +1,78 @@
+{
+  "biomes": {
+    "default": {
+      "water_surface_color": "#5197f8",
+      "water_surface_transparency": 0.75,
+      "water_fog_color": "#1919ff",
+      "water_fog_distance": 100
+    },
+    "swampland": {
+      "water_surface_color": "#607960",
+      "water_fog_color": "#E7ECA2"
+    },
+    "swampland_mutated": {
+      "water_surface_color": "#607960",
+      "water_fog_color": "#E7ECA2"
+    },
+    "river": {
+      "water_surface_color": "#5197f8",
+      "water_fog_color": "#1919ff"
+    },
+    "frozen_river": {
+      "water_surface_color": "#5b75ff",
+      "water_fog_color": "#1919ff"
+    },
+    "beach": {
+      "water_surface_color": "#5197f8",
+      "water_fog_color": "#1919ff"
+    },
+    "stone_beach": {
+      "water_surface_color": "#5197f8",
+      "water_fog_color": "#1919ff"
+    },
+    "cold_beach": {
+      "water_surface_color": "#5b75ff",
+      "water_fog_color": "#1919ff"
+    },
+    "ocean": {
+      "water_surface_color": "#5197f8",
+      "water_fog_color": "#1919ff"
+    },
+    "deep_ocean": {
+      "water_surface_color": "#5197f8",
+      "water_fog_color": "#1919ff"
+    },
+    "warm_ocean": {
+      "water_surface_color": "#2bdefd",
+      "water_fog_color": "#166dfc"
+    },
+    "deep_warm_ocean": {
+      "water_surface_color": "#2bdefd",
+      "water_fog_color": "#166dfc"
+    },
+    "lukewarm_ocean": {
+      "water_surface_color": "#3cbdf4",
+      "water_fog_color": "#166dfc"
+    },
+    "deep_lukewarm_ocean": {
+      "water_surface_color": "#3cbdf4",
+      "water_fog_color": "#166dfc"
+    },
+    "cold_ocean": {
+      "water_surface_color": "#5b75ff",
+      "water_fog_color": "#1919ff"
+    },
+    "deep_cold_ocean": {
+      "water_surface_color": "#5b75ff",
+      "water_fog_color": "#1919ff"
+    },
+    "frozen_ocean": {
+      "water_surface_color": "#434ec4",
+      "water_fog_color": "#1919ff"
+    },
+    "deep_frozen_ocean": {
+      "water_surface_color": "#434ec4",
+      "water_fog_color": "#1919ff"
+    }
+  }
+}

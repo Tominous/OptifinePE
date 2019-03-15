@@ -1,0 +1,27 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/fire_0",
+    "atlas_tile": "fire_0",
+    "ticks_per_frame": 10
+  },
+  {
+    "flipbook_texture": "textures/blocks/fire_1",
+    "atlas_tile": "fire_1",
+    "ticks_per_frame": 10
+  },
+  {
+    "flipbook_texture": "textures/blocks/lava_still",
+    "atlas_tile": "still_lava",
+    "ticks_per_frame": 21
+  },
+  {
+    "flipbook_texture": "textures/blocks/lava_flow",
+    "atlas_tile": "flowing_lava",
+    "ticks_per_frame": 15,
+    "replicate": 2
+  },
+  {
+    "flipbook_texture": "textures/blocks/portal",
+    "atlas_tile": "portal"
+  }
+]

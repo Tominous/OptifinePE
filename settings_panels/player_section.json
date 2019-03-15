@@ -1,0 +1,108 @@
+  //////////////////////////////////////////////////////////
+ //modified by netherninja, dont use on any other addons!//
+//////////////////////////////////////////////////////////
+
+{
+  "namespace": "player_section",
+
+// Player button & section
+  
+  "player_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "player_button_toggle",
+    "$glyph_texture": "textures/ui/playersettings_glyph",
+    "$glyph_color_texture": "textures/ui/playersettings_glyph_color",
+    "$glyph_size": [ 16, 16 ],
+    "$button_text": "panel.player",
+    "$toggle_property_bag": {
+      "#panel_title": "panel.player"
+    }
+  },
+  "advanced_video_options_toggle@settings_common.option_toggle_control": {
+    "$toggle_name": "Show World/Lag Options",
+    "$toggle_state_binding_name": "#advanced_video_options"
+  },
+    
+  "player_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "player_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "field_of_view_slider@settings_common.option_slider": {
+         "$ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "#field_of_view_slider_label",
+          "$slider_name": "field_of_view",
+          "$slider_value_binding_name": "#field_of_view",
+          "$option_enabled_binding_name": "#field_of_view_enabled",
+          "$label_bindings": [
+            {
+               "binding_name": "#field_of_view_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_toggle_3@settings_common.option_toggle": {
+          "ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "options.viewBobbing",
+          "$option_binding_name": "#view_bobbing",
+          "$option_enabled_binding_name": "#view_bobbing_enabled",
+          "$toggle_name": "view_bobbing"
+        }
+      },
+      {
+        "option_toggle_4@settings_common.option_toggle": {
+          "$option_label": "options.hidepaperdoll",
+          "$option_binding_name": "#hide_paperdoll",
+          "$option_enabled_binding_name": "#hide_paperdoll_enabled",
+          "$toggle_name": "hide_paperdoll"
+        }
+      },
+      {
+        "option_toggle_5@settings_common.option_toggle": {
+          "$option_label": "options.ingamePlayerNames",
+          "$option_binding_name": "#ingame_player_names",
+          "$option_enabled_binding_name": "#ingame_player_names_enabled",
+          "$toggle_name": "ingame_player_names"
+        }
+      },
+      {
+        "option_toggle_6@settings_common.option_toggle": {
+          "$option_label": "options.splitscreenIngamePlayerNames",
+          "$option_binding_name": "#splitscreen_ingame_player_names",
+          "$option_enabled_binding_name": "#splitscreen_ingame_player_names_enabled",
+          "$toggle_name": "splitscreen_ingame_player_names"
+        }
+      },
+      {
+        "field_of_view_toggle_7@settings_common.option_toggle": {
+          "$option_label": "options.fov.toggle",
+          "$option_binding_name": "#field_of_view_toggle",
+          "$option_enabled_binding_name": "#field_of_view_toggle_enabled",
+          "$toggle_name": "field_of_view_toggle"
+              }
+            ]
+          }
+        },
+        {
+        "selector_group_lable_1@settings_common.selector_group_label": {
+          "text": " "
+          }
+        }
+      }
+    ]
+  },
+
+
+  //////////////////////////////////////////////////////////
+ //modified by netherninja, dont use on any other addons!//
+//////////////////////////////////////////////////////////

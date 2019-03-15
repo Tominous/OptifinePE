@@ -1,0 +1,267 @@
+{
+  "namespace": "optifine_graphics_section",
+	
+	  "graphics_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "graphics_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/temps_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/temps_button",
+    "$glyph_size": [ 16, 19 ],
+    "$button_text": "options.category.graphics",
+    "$toggle_property_bag": {
+      "#panel_title": "options.category.graphics"
+    }
+  },
+
+  "graphics_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "graphics_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+	
+	      {
+        "perspective_dropdown@settings_common.option_dropdown": {
+          "$option_label": "options.thirdperson",
+          "ignored": "($is_holographic and $is_reality_mode)",
+          "$dropdown_content": "general_section.third_person_dropdown_content",
+          "$dropdown_area": "content_area",
+          "$dropdown_name": "third_person_dropdown",
+          "$option_enabled_binding_name": "#third_person_dropdown_enabled",
+          "$options_dropdown_toggle_label_binding": "#third_person_dropdown_toggle_label",
+          "$dropdown_scroll_content_size": [ "100%", "200%" ]
+        }
+      },
+	  
+	        {
+        "fov_slider@settings_common.option_slider": {
+          "$ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "#field_of_view_slider_label",
+          "$slider_name": "field_of_view",
+          "$slider_value_binding_name": "#field_of_view",
+          "$option_enabled_binding_name": "#field_of_view_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#field_of_view_slider_label"
+            }
+          ]
+        }
+      },
+	  
+	        {
+        "fancy_leaves_toggle@settings_common.option_toggle": {
+        //  "ignored": "($pocket_edition or $education_ios or $is_holographic)",
+          "$option_label": "options.transparentleaves",
+          "$option_binding_name": "#transparent_leaves",
+          "$option_enabled_binding_name": "#transparent_leaves_enabled",
+          "$toggle_name": "transparent_leaves"
+        }
+      },
+	  
+	        {
+        "fancy_bubbles_toggle@settings_common.option_toggle": {
+          "$option_label": "options.bubbleparticles",
+          "$option_binding_name": "#bubble_particles",
+          "$option_enabled_binding_name": "#bubble_particles_enabled",
+          "$toggle_name": "bubble_particles"
+        }
+      },
+      {
+        "render_clouds_toggle@settings_common.option_toggle": {
+          "$option_label": "options.renderclouds",
+          "$option_binding_name": "#render_clouds",
+          "$option_enabled_binding_name": "#render_clouds_enabled",
+          "$toggle_name": "render_clouds"
+        }
+      },
+      {
+        "fancy_clouds_toggle@settings_common.option_toggle": {
+          "$option_label": "options.fancyskies",
+          "$option_binding_name": "#fancy_skies",
+          "$option_enabled_binding_name": "#fancy_skies_enabled",
+          "$toggle_name": "fancy_skies"
+        }
+      },
+      {
+        "smooth_lighting_toggle@settings_common.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.smooth_lighting",
+          "$option_binding_name": "#smooth_lighting",
+          "$option_enabled_binding_name": "#smooth_lighting_enabled",
+          "$toggle_name": "smooth_lighting"
+        }
+      },
+	  
+	        {
+        "field_of_view_toggle@settings_common.option_toggle": {
+          "$option_label": "options.fov.toggle",
+          "$option_binding_name": "#field_of_view_toggle",
+          "$option_enabled_binding_name": "#field_of_view_toggle_enabled",
+          "$toggle_name": "field_of_view_toggle"
+        }
+      },
+	  
+	        {
+        "brightness_slider@settings_common.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#gamma_slider_label",
+          "$slider_name": "gamma",
+          "$slider_value_binding_name": "#gamma",
+          "$option_enabled_binding_name": "#gamma_enabled",
+          "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+          "$label_bindings": [
+            {
+              "binding_name": "#gamma_slider_label"
+            }
+          ]
+        }
+      },
+	  
+	        {
+        "view_bobbing_toggle@settings_common.option_toggle": {
+          "ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "options.viewBobbing",
+          "$option_binding_name": "#view_bobbing",
+          "$option_enabled_binding_name": "#view_bobbing_enabled",
+          "$toggle_name": "view_bobbing"
+        }
+      },
+      {
+        "graphics_toggle@settings_common.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.graphics",
+          "$option_binding_name": "#graphics_toggle",
+          "$option_enabled_binding_name": "#graphics_toggle_enabled",
+          "$toggle_name": "graphics_toggle"
+        }
+      },
+      {
+        "rendering_profile_option_slider@settings_common.option_slider": {
+          "ignored": true,
+          "$option_label": "#rendering_profile_slider_label",
+          "$slider_name": "rendering_profile",
+          "$slider_value_binding_name": "#rendering_profile",
+          "$option_enabled_binding_name": "#rendering_profile_slider_enabled",
+          "$slider_steps_binding_name": "#rendering_profile_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "#rendering_profile_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "super_fancy_panel": {
+          "ignored": true,
+          "type": "panel",
+          "size": [ "100%", "100%c + 4px" ],
+
+          "controls": [
+            {
+              "super_fancy_section": {
+                "type": "image",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [ "100% - 4px", "100%c + 6px" ],
+                "texture": "textures/ui/mainbanners",
+                "controls": [
+                  {
+                    "super_fancy_contents": {
+                      "type": "stack_panel",
+                      "size": [ "100% - 6px", "100%c - 4px" ],
+                      "controls": [
+                        {
+                          "atmospherics_toggle@settings_common.option_toggle": {
+                            "$option_label": "options.atmosphericsEnable",
+                            "$option_binding_name": "#atmospherics",
+                            "$option_enabled_binding_name": "#atmospherics_enabled",
+                            "$toggle_name": "atmospherics"
+                          }
+                        },
+                        {
+                          "edge_highlight_toggle@settings_common.option_toggle": {
+                            "$option_label": "options.edgeHighlightEnable",
+                            "$option_binding_name": "#edge_highlight",
+                            "$option_enabled_binding_name": "#edge_highlight_enabled",
+                            "$toggle_name": "edge_highlight"
+                          }
+                        },
+                        {
+                          "bloom_toggle@settings_common.option_toggle": {
+                            "$option_label": "options.bloomEnable",
+                            "$option_binding_name": "#bloom",
+                            "$option_enabled_binding_name": "#bloom_enabled",
+                            "$toggle_name": "bloom"
+                          }
+                        },
+                        {
+                          "terrain_shadows_toggle@settings_common.option_toggle": {
+                            "$option_label": "options.terrainShadowsEnable",
+                            "$option_binding_name": "#terrain_shadows",
+                            "$option_enabled_binding_name": "#terrain_shadows_enabled",
+                            "$toggle_name": "terrain_shadows"
+                          }
+                        },
+                        {
+                          "super_fancy_water_toggle@settings_common.option_toggle": {
+                            "$option_label": "options.superFancyWaterEnable",
+                            "$option_binding_name": "#super_fancy_water",
+                            "$option_enabled_binding_name": "#super_fancy_water_enabled",
+                            "$toggle_name": "super_fancy_water"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+	  
+	        {
+        "render_distance_slider@settings_common.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#render_distance_slider_label",
+          "$slider_name": "render_distance",
+          "$slider_value_binding_name": "#render_distance",
+          "$option_enabled_binding_name": "#render_distance_enabled",
+          "$slider_steps_binding_name": "#render_distance_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "#render_distance_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "particle_render_distance_slider@settings_common.option_slider": {
+          "ignored": "($pocket_edition or $is_holographic or $education_ios)",
+          "$option_label": "#particle_render_distance_slider_label",
+          "$slider_name": "particle_render_distance",
+          "$slider_value_binding_name": "#particle_render_distance",
+          "$option_enabled_binding_name": "#particle_render_distance_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#particle_render_distance_slider_label"
+            }
+          ]
+        }
+      }
+	  
+	  
+	
+    ]
+  }
+	
+	
+	
+}

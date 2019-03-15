@@ -1,0 +1,130 @@
+{
+  "namespace": "store",
+
+  //--------------------------------------------------------------------------------
+  // Controls
+  //--------------------------------------------------------------------------------
+
+  //--------------------------------------------------------------------------------
+  // Content
+  //----------------------------------------------------
+
+  "global_texture_pack_button@resource_packs.resource_packs_section_toggle_base": {
+    "enabled": "(not $trial)",
+    "visible": "(not $education_edition)",
+    "$cycling_icon_path": "#cycling_icon_path_global",
+    "$cycling_icon_zip": "#cycling_icon_zip_global",
+    "$cycling_icon_file_system": "#cycling_icon_file_system_global",
+    "$button_label_text": "menu.globalpacks",
+    "property_bag": {
+      "#panel_title": "menu.globalpacks"
+    }
+  },
+
+  "global_shaders_pack_section@resource_packs.selected_stack_panel": {
+    "$selected_pack_items": "#selected_pack_items_global",
+    "$available_pack_items": "#available_pack_items_global",
+    "$selected_grid_dimensions": "#selected_grid_dimensions_global",
+    "$available_grid_dimensions": "#available_grid_dimensions_global",
+    "$button.selected_pack": "button.selected_pack_global",
+    "$button.deselected_pack": "button.deselected_pack_global",
+    "$button.available_pack": "button.available_pack_global",
+    "$button.move_left": "button.move_left_global",
+    "$button.sort_up": "button.sort_up_global",
+    "$button.sort_down": "button.sort_down_global",
+    "$button.report_errors" : "button.report_errors_global",
+    "$bottom_description_text": "resourcePack.description.bottom.global",
+    "$selected_label_text": "resourcePack.selected.title.packs",
+    "$available_label_text": "resourcePack.available.title.packs",
+    "$default_item_texture": "#default_item_texture_global",
+    "$default_item_file_system": "#default_item_file_system_global",
+    "$default_item_title": "resourcePack.vanilla.name",
+    "$default_item_description": "resourcePack.vanilla.description",
+    "$total_size_binding": "#total_size_binding_global",
+    "$in_game_error_text": "resourcePack.error.ingame.packs",
+    "$invalid_pack_items": "#invalid_pack_items_global",
+    "$invalid_grid_dimensions": "#invalid_grid_dimensions_global",
+    "$button.invalid_pack": "button.invalid_pack_global",
+    "$button.pack_warning": "button.pack_warning_global",
+    "$invalid_label_text": "resourcePack.invalid.title.packs",
+    "$top_label_box": false,
+    "$show_checkbox": false,
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "global_texture_pack_button",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+
+
+  //--------------------------------------------------------------------------------
+  // Screen
+  //--------------------------------------------------------------------------------
+
+  "store_screen@common.base_screen": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_up",
+        "to_button_id": "button.menu_up",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_down",
+        "to_button_id": "button.menu_down",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_left",
+        "to_button_id": "button.menu_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_right",
+        "to_button_id": "button.menu_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "$default_text_color": [ 0.3, 0.3, 0.3 ],
+    "$screen_content": "resource_packs.resource_packs_screen_content"//store.store_screen_content
+  },
+
+  "store_screen_content": {
+    "type": "stack_panel",
+    "controls": [
+      {
+        "main_panel@common_dialogs.main_panel_no_buttons": {
+          "size": "$store_screen_size",
+          "$text_name": "store.title",
+          "$child_control": "store.main_panel"
+      }
+    },
+            { "global_shaders_pack_section@resource_packs.selected_stack_panel": { } },
+            { "global_texture_pack_button@resource_packs.resource_packs_section_toggle_base": { } },
+
+      {
+        "popup_dialog_factory": {
+          "type": "factory",
+          "size":  [0, 0],
+          "control_ids": {
+            "no_connection": "@resource_pack_purchase.popup_dialog__no_connection",
+            "purchase_failed": "@resource_pack_purchase.popup_dialog__purchase_failed",
+            "purchase_in_progress": "@skin_pack_purchase.popup_dialog__purchase_in_progress"
+          }
+        }
+      }
+    ]
+  }
+}

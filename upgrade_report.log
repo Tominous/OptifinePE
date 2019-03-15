@@ -1,0 +1,30 @@
+{
+   "errors" : null,
+   "location" : {
+      "fs" : 2,
+      "path" : "/storage/emulated/0/games/com.mojang/resource_packs/OptifinePE2.0"
+   },
+   "upgraded" : true,
+   "warnings" : [
+      {
+         "key" : 13,
+         "parameters" : [ "/header/pack_id", "45007738-38eb-3828-bf12-a05dd8d7d81c" ],
+         "type" : 2
+      },
+      {
+         "key" : 15,
+         "parameters" : [ "/header/packs_version", "2.0.0" ],
+         "type" : 2
+      },
+      {
+         "key" : 13,
+         "parameters" : [ "/modules/0/uuid", "03c3d7f1-bad9-3b95-9323-2b5f0057eb7f" ],
+         "type" : 2
+      },
+      {
+         "key" : 15,
+         "parameters" : [ "/modules/0/version", "2.0.0" ],
+         "type" : 2
+      }
+   ]
+}

@@ -1,0 +1,136 @@
+  //////////////////////////////////////////////////////////
+ //modified by netherninja, dont use on any other addons!//
+//////////////////////////////////////////////////////////
+
+{
+  "namespace": "graphic_section",
+
+// Gameplay button & section
+  
+  "gameplay_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "gameplay_button_toggle",
+    "$glyph_texture": "textures/ui/gameplay_glyph",
+    "$glyph_color_texture": "textures/ui/gameplay_glyph_color",
+    "$glyph_size": [ 16, 16 ],
+    "$button_text": "panel.graphics",
+    "$toggle_property_bag": {
+      "#panel_title": "panel.graphics"
+    }
+  },
+    
+  "gameplay_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "gameplay_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "brightness_slider@settings_common.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#gamma_slider_label",
+          "$slider_name": "gamma",
+          "$slider_value_binding_name": "#gamma",
+          "$option_enabled_binding_name": "#gamma_enabled",
+          "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+          "$label_bindings": [
+            {
+              "binding_name": "#gamma_slider_label"
+            }
+          ]
+        }
+      },
+      {
+      "render_distance_slider@settings_common.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#render_distance_slider_label",
+          "$slider_name": "render_distance",
+          "$slider_value_binding_name": "#render_distance",
+          "$option_enabled_binding_name": "#render_distance_enabled",
+          "$slider_steps_binding_name": "#render_distance_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "#render_distance_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "particle_render_distance_slider@settings_common.option_slider": {
+          "$option_label": "#particle_render_distance_slider_label",
+          "$slider_name": "particle_render_distance",
+          "$slider_value_binding_name": "#particle_render_distance",
+          "$option_enabled_binding_name": "#particle_render_distance_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#particle_render_distance_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "fancy_clouds_toggle_9@settings_common.option_toggle": {
+          "$option_label": "options.fancyskies",
+          "$option_binding_name": "#fancy_skies",
+          "$option_enabled_binding_name": "#fancy_skies_enabled",
+          "$toggle_name": "fancy_skies"
+        }
+      },
+      {
+        "render_clouds_toggle_10@settings_common.option_toggle": {
+          "$option_label": "options.renderclouds",
+          "$option_binding_name": "#render_clouds",
+          "$option_enabled_binding_name": "#fancy_skies",
+          "$toggle_name": "render_clouds"
+        }
+      },
+      {
+         "fancy_bubbles_toggle@settings_common.option_toggle": {
+          "$option_label": "options.bubbleparticles",
+          "$option_binding_name": "#bubble_particles",
+          "$option_enabled_binding_name": "#bubble_particles_enabled",
+          "$toggle_name": "bubble_particles"
+        }
+      },
+      {
+        "smooth_lighting_toggle_11@settings_common.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.smooth_lighting",
+          "$option_binding_name": "#smooth_lighting",
+          "$option_enabled_binding_name": "#smooth_lighting_enabled",
+          "$toggle_name": "smooth_lighting"
+        }
+      },
+      {
+        "graphics_toggle_12@settings_common.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.graphics",
+          "$option_binding_name": "#graphics_toggle",
+          "$option_enabled_binding_name": "#graphics_toggle_enabled",
+          "$toggle_name": "graphics_toggle"
+        }
+      },
+      {
+        "fancy_leaves_toggle@settings_common.option_toggle": {
+          "$option_label": "options.transparentleaves",
+          "$option_binding_name": "#transparent_leaves",
+          "$option_enabled_binding_name": "#transparent_leaves_enabled",
+          "$toggle_name": "transparent_leaves"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+
+  //////////////////////////////////////////////////////////
+ //modified by netherninja, dont use on any other addons!//
+//////////////////////////////////////////////////////////

@@ -1,0 +1,5 @@
+.optifine.shaderStore#,
+
+.optifine.shaderToggle#,
+
+.optifine.usePackDesciption#

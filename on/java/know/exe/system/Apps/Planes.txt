@@ -1,0 +1,2 @@
+working.should.be = true;
+else bad[int.toBool.(true) = false]

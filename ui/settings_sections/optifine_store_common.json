@@ -1,0 +1,117 @@
+{
+  "namespace": "optifine_store_common",
+  
+  /*****************************
+				Content
+  ******************************/
+  
+       "option_store_box": {
+    "type": "image",
+    "texture": "textures/gui/help_label_box",
+    "size": [ "100%", "100%c + 6px" ],
+    "controls": [
+	      {
+        "title": {
+          "type": "label",
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+		  "offset": [0,2],
+		  "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "text": "$container_title",
+          "bindings": [
+            {
+              "binding_name": "$container_title"
+            }
+          ]
+        }
+      },
+      {
+        "control": {
+          "type": "label",
+          "color": "$main_header_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "layer": 1,
+		  "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+		  "offset": [0,-2],
+          "text": "$container_text_binding_name",
+          "bindings": [
+            {
+              "binding_name": "$container_text_binding_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+    "store_box@settings_common.option_generic": {
+    "$control_name": "optifine_store_common.option_store_box"
+  },
+  
+  
+  
+    "go_to_store_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "go_to_store_button_toggle",
+    "$glyph_texture": "textures/gui/newgui/settings/store_button_glyph",
+    "$glyph_color_texture": "textures/gui/newgui/settings/store_button",
+    "$glyph_size": [ 15, 17 ],
+    "$button_text": "Atrás",	//optifine.shaderStore
+    "$toggle_property_bag": {
+      "#panel_title": "optifine.shaderStore"
+    }
+  },
+
+  "go_to_store_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "go_to_store_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+	{
+	  "name_controls": {
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "size": [ "100%", "30px" ],
+	  "controls": [
+	        { "shaders_button@optifine_store_section.shaders_button": { "size": ["75%", "30px" ] } },
+            {
+              "action_button@settings_common.action_button": {
+                "$button_text": "3 items",
+				"size": ["25%", "100%"]
+              }
+            }
+			
+	      ]
+	    }
+	  },
+	  {
+	  "name_controls": {
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "size": [ "100%", "30px" ],
+	  "controls": [
+	        { "pvp_button@optifine_store_section.pvp_button": { "size": ["75%", "30px" ] } },
+            {
+              "action_button@settings_common.action_button": {
+                "$button_text": "5 items",
+				"size": ["25%", "100%"]
+              }
+            }
+			
+	      ]
+	    }
+	  }
+    ]
+  }
+  //end
+}

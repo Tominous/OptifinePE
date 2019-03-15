@@ -1,0 +1,17 @@
+{
+   "format_version" : 1,
+   "header" : {
+      "description" : "Optifine PE v2.7.0 By Deivysito",
+      "name" : "Optifine PE (Cristales con bordes)",
+         "uuid" : "03c3d7f1-bad9-3b95-9323-2b50057hcb7f",
+      "version" : [ 2, 7, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "Optifine PE v2.7.0 By Deivysito",
+         "type" : "resources",
+         "uuid" : "03c3d7f1-bad9-3b95-9323-2b50057hcb7f",
+         "version" : [ 2, 7, 0 ]
+      }
+   ]
+}
